@@ -1,124 +1,208 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="css/output.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - LUXBAG</title>
+  <link href="css/output.css" rel="stylesheet">
 </head>
-<body class="min-h-screen bg-gray-100 text-gray-800">
+<body class="bg-gray-950 text-gray-200 antialiased min-h-screen">
+  
   <!-- Header -->
-  <header class="sticky top-0 z-10 border-b bg-white">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-      <div class="flex items-center gap-2">
-        <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 font-bold text-white">ML</div>
-        <span class="font-semibold">Belajar Machine Learning</span>
-      </div>
-      <div class="flex items-center gap-3">
-        <div class="hidden text-right sm:block">
-          <p id="user-name" class="text-sm font-medium leading-tight">Memuat...</p>
-          <p id="user-email" class="text-xs text-gray-500"></p>
+  <header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Brand -->
+        <div class="flex-shrink-0 flex items-center">
+          <h1 class="text-2xl font-bold tracking-tight text-white">LUX<span class="text-amber-500">BAG</span></h1>
         </div>
-        <img id="avatar" class="hidden h-9 w-9 rounded-full" alt="" referrerpolicy="no-referrer" />
-        <button id="logout"
-          class="rounded-lg border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50">
-          Logout
-        </button>
+        
+        <!-- User Info & Logout -->
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-3">
+            <div class="text-right hidden sm:block">
+              <p id="user-name" class="text-sm font-medium text-gray-200">Memuat...</p>
+              <p id="user-email" class="text-xs text-gray-400"></p>
+            </div>
+            <img id="avatar" src="" alt="Avatar" class="h-9 w-9 rounded-full object-cover hidden ring-2 ring-gray-800">
+          </div>
+          <div class="h-6 w-px bg-gray-800 mx-1"></div>
+          <button id="logout" class="px-4 py-2 text-sm font-medium border border-gray-700 text-gray-400 hover:bg-gray-800 hover:text-gray-200 rounded-xl transition-colors duration-200">
+            Keluar
+          </button>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="mx-auto max-w-6xl space-y-6 px-4 py-6">
-    <div>
-      <h1 class="text-2xl font-bold">Halo, <span id="greeting-name">pengguna</span> 👋</h1>
-      <p class="text-sm text-gray-500">Ini ringkasan progres belajar Anda (data contoh).</p>
-    </div>
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    
+    <!-- Greeting Section -->
+    <section>
+      <h2 class="text-3xl font-bold text-white tracking-tight">Halo, <span id="greeting-name" class="text-amber-500">pengguna</span> 👋</h2>
+      <p class="mt-2 text-gray-400">Selamat datang di dashboard LUXBAG Anda.</p>
+    </section>
 
-    <!-- Statistik -->
-    <section class="grid grid-cols-2 gap-4 lg:grid-cols-4">
-      <div class="rounded-xl bg-white p-4 shadow-sm">
-        <p class="text-sm text-gray-500">Dataset</p>
-        <p class="mt-1 text-2xl font-bold">12</p>
-        <p class="text-xs text-green-600">+2 minggu ini</p>
+    <!-- Stats Grid -->
+    <section class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <!-- Stat 1 -->
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-5 sm:p-6 shadow-sm">
+        <div class="flex items-center gap-3">
+          <div class="p-2.5 bg-amber-500/10 rounded-xl text-amber-500">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+          </div>
+          <h3 class="text-sm font-medium text-gray-400">Pesanan</h3>
+        </div>
+        <p class="mt-4 text-3xl font-bold text-white">12</p>
+        <p class="mt-1 text-sm text-green-400 flex items-center gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+          +2 minggu ini
+        </p>
       </div>
-      <div class="rounded-xl bg-white p-4 shadow-sm">
-        <p class="text-sm text-gray-500">Model dilatih</p>
-        <p class="mt-1 text-2xl font-bold">28</p>
-        <p class="text-xs text-green-600">+5 minggu ini</p>
+
+      <!-- Stat 2 -->
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-5 sm:p-6 shadow-sm">
+        <div class="flex items-center gap-3">
+          <div class="p-2.5 bg-rose-500/10 rounded-xl text-rose-500">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+          </div>
+          <h3 class="text-sm font-medium text-gray-400">Wishlist</h3>
+        </div>
+        <p class="mt-4 text-3xl font-bold text-white">28</p>
+        <p class="mt-1 text-sm text-green-400 flex items-center gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+          +5 minggu ini
+        </p>
       </div>
-      <div class="rounded-xl bg-white p-4 shadow-sm">
-        <p class="text-sm text-gray-500">Akurasi terbaik</p>
-        <p class="mt-1 text-2xl font-bold">94,2%</p>
-        <p class="text-xs text-gray-400">Random Forest</p>
+
+      <!-- Stat 3 -->
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-5 sm:p-6 shadow-sm">
+        <div class="flex items-center gap-3">
+          <div class="p-2.5 bg-emerald-500/10 rounded-xl text-emerald-500">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="text-sm font-medium text-gray-400">Total Belanja</h3>
+        </div>
+        <p class="mt-4 text-2xl sm:text-3xl font-bold text-white">Rp 4.2 Jt</p>
+        <p class="mt-1 text-sm text-gray-500">
+          Bulan ini
+        </p>
       </div>
-      <div class="rounded-xl bg-white p-4 shadow-sm">
-        <p class="text-sm text-gray-500">Jam belajar</p>
-        <p class="mt-1 text-2xl font-bold">36 jam</p>
-        <p class="text-xs text-green-600">+4 jam minggu ini</p>
+
+      <!-- Stat 4 -->
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-5 sm:p-6 shadow-sm">
+        <div class="flex items-center gap-3">
+          <div class="p-2.5 bg-indigo-500/10 rounded-xl text-indigo-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+          </div>
+          <h3 class="text-sm font-medium text-gray-400">Poin Reward</h3>
+        </div>
+        <p class="mt-4 text-3xl font-bold text-white">360</p>
+        <p class="mt-1 text-sm text-green-400 flex items-center gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+          +40 minggu ini
+        </p>
       </div>
     </section>
 
-    <!-- Progres + eksperimen -->
-    <section class="grid gap-4 lg:grid-cols-3">
-      <div class="rounded-xl bg-white p-4 shadow-sm lg:col-span-2">
-        <h2 class="mb-3 font-semibold">Eksperimen terbaru</h2>
+    <!-- Two-column section -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+      
+      <!-- Table: Pesanan Terbaru -->
+      <div class="lg:col-span-2 bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden flex flex-col">
+        <div class="p-5 sm:px-6 py-4 border-b border-gray-800 flex justify-between items-center">
+          <h3 class="text-lg font-semibold text-white">Pesanan terbaru</h3>
+          <button class="text-sm text-amber-500 hover:text-amber-400 font-medium">Lihat Semua</button>
+        </div>
         <div class="overflow-x-auto">
-          <table class="w-full text-left text-sm">
-            <thead class="border-b text-gray-500">
+          <table class="min-w-full divide-y divide-gray-800">
+            <thead class="bg-gray-900/50">
               <tr>
-                <th class="py-2 pr-4 font-medium">Model</th>
-                <th class="py-2 pr-4 font-medium">Dataset</th>
-                <th class="py-2 pr-4 font-medium">Akurasi</th>
-                <th class="py-2 font-medium">Status</th>
+                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider sm:pl-6">Produk</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Kategori</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Harga</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Status</th>
               </tr>
             </thead>
-            <tbody class="divide-y">
-              <tr>
-                <td class="py-2 pr-4">Random Forest</td>
-                <td class="py-2 pr-4">Iris</td>
-                <td class="py-2 pr-4">94,2%</td>
-                <td class="py-2"><span class="rounded-full bg-green-100 px-2 py-0.5 text-xs text-green-700">Selesai</span></td>
+            <tbody class="divide-y divide-gray-800 bg-gray-900">
+              <tr class="hover:bg-gray-800/50 transition-colors">
+                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-6">Tas Selempang Kulit</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-400">Sling Bag</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-300">Rp 450.000</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm">
+                  <span class="inline-flex items-center rounded-md bg-amber-500/10 px-2 py-1 text-xs font-medium text-amber-400 ring-1 ring-inset ring-amber-500/20">Dikirim</span>
+                </td>
               </tr>
-              <tr>
-                <td class="py-2 pr-4">Logistic Regression</td>
-                <td class="py-2 pr-4">Titanic</td>
-                <td class="py-2 pr-4">81,5%</td>
-                <td class="py-2"><span class="rounded-full bg-green-100 px-2 py-0.5 text-xs text-green-700">Selesai</span></td>
+              <tr class="hover:bg-gray-800/50 transition-colors">
+                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-6">Backpack Premium</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-400">Ransel</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-300">Rp 780.000</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm">
+                  <span class="inline-flex items-center rounded-md bg-green-500/10 px-2 py-1 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-500/20">Selesai</span>
+                </td>
               </tr>
-              <tr>
-                <td class="py-2 pr-4">Neural Network</td>
-                <td class="py-2 pr-4">MNIST</td>
-                <td class="py-2 pr-4">—</td>
-                <td class="py-2"><span class="rounded-full bg-yellow-100 px-2 py-0.5 text-xs text-yellow-700">Berjalan</span></td>
+              <tr class="hover:bg-gray-800/50 transition-colors">
+                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-6">Clutch Pesta Gold</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-400">Clutch</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-300">Rp 320.000</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm">
+                  <span class="inline-flex items-center rounded-md bg-blue-500/10 px-2 py-1 text-xs font-medium text-blue-400 ring-1 ring-inset ring-blue-500/20">Diproses</span>
+                </td>
               </tr>
-              <tr>
-                <td class="py-2 pr-4">K-Means</td>
-                <td class="py-2 pr-4">Mall Customers</td>
-                <td class="py-2 pr-4">—</td>
-                <td class="py-2"><span class="rounded-full bg-gray-100 px-2 py-0.5 text-xs text-gray-600">Antre</span></td>
+              <tr class="hover:bg-gray-800/50 transition-colors">
+                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-6">Tote Bag Canvas</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-400">Tote</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-300">Rp 250.000</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm">
+                  <span class="inline-flex items-center rounded-md bg-gray-500/10 px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-500/20">Menunggu</span>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <div class="rounded-xl bg-white p-4 shadow-sm">
-        <h2 class="mb-3 font-semibold">Progres kursus</h2>
-        <ul class="space-y-4 text-sm">
-          <li>
-            <div class="mb-1 flex justify-between"><span>Dasar Python</span><span>100%</span></div>
-            <div class="h-2 rounded-full bg-gray-200"><div class="h-2 w-full rounded-full bg-blue-600"></div></div>
-          </li>
-          <li>
-            <div class="mb-1 flex justify-between"><span>Supervised Learning</span><span>70%</span></div>
-            <div class="h-2 rounded-full bg-gray-200"><div class="h-2 w-[70%] rounded-full bg-blue-600"></div></div>
-          </li>
-          <li>
-            <div class="mb-1 flex justify-between"><span>Deep Learning</span><span>25%</span></div>
-            <div class="h-2 rounded-full bg-gray-200"><div class="h-2 w-1/4 rounded-full bg-blue-600"></div></div>
-          </li>
-        </ul>
+      <!-- Kategori Favorit -->
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-5 sm:p-6 flex flex-col">
+        <h3 class="text-lg font-semibold text-white mb-6">Kategori favorit</h3>
+        
+        <div class="space-y-6 flex-1">
+          <!-- Progress 1 -->
+          <div>
+            <div class="flex justify-between items-center mb-1.5">
+              <span class="text-sm font-medium text-gray-300">Sling Bag</span>
+              <span class="text-sm text-gray-400">100%</span>
+            </div>
+            <div class="w-full bg-gray-800 rounded-full h-2">
+              <div class="bg-amber-500 h-2 rounded-full" style="width: 100%"></div>
+            </div>
+          </div>
+          
+          <!-- Progress 2 -->
+          <div>
+            <div class="flex justify-between items-center mb-1.5">
+              <span class="text-sm font-medium text-gray-300">Ransel</span>
+              <span class="text-sm text-gray-400">70%</span>
+            </div>
+            <div class="w-full bg-gray-800 rounded-full h-2">
+              <div class="bg-amber-500 h-2 rounded-full" style="width: 70%"></div>
+            </div>
+          </div>
+          
+          <!-- Progress 3 -->
+          <div>
+            <div class="flex justify-between items-center mb-1.5">
+              <span class="text-sm font-medium text-gray-300">Clutch</span>
+              <span class="text-sm text-gray-400">25%</span>
+            </div>
+            <div class="w-full bg-gray-800 rounded-full h-2">
+              <div class="bg-amber-500 h-2 rounded-full" style="width: 25%"></div>
+            </div>
+          </div>
+        </div>
       </div>
+
     </section>
   </main>
 

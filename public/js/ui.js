@@ -4,7 +4,7 @@ window.ui = {
     el.textContent = message;
     el.className =
       'rounded-xl px-4 py-3 text-sm ' +
-      (type === 'error' ? 'bg-red-50 text-red-600' : 'bg-green-50 text-green-700');
+      (type === 'error' ? 'bg-red-500/10 text-red-400 border border-red-500/20' : 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20');
   },
 
   hide(el) {
